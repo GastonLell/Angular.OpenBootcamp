@@ -1,0 +1,15 @@
+.contacto{
+  font-size: large;
+  margin-top: 24px;
+}
+.contacto:hover{
+  cursor: pointer;
+  color: green;
+}
+.contacto_btn{
+  margin-bottom: 24px;
+}
+.contact-details{
+  width: 300px;
+  border: 1px solid rebeccapurple;
+}

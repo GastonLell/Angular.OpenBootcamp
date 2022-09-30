@@ -1,0 +1,13 @@
+<h3>Lista de contactos</h3>
+<ng-container *ngIf="contacts">
+
+  <div *ngFor="let contact of contacts">
+    <!-- PASANDO INFORMACIOPN EXTRA EN RUTAS -->
+    <p class="contacto" [routerLink]="['/dashboard/contacts/', contact.id.name]" [state]="{data: contact, filter: previousFilter}">{{contact | nombreCompleto}} </p>
+
+    <button mat-raised-button color="primary" class="contacto_btn" (click)="selectFriend(contact)">Seleccionar como amigo invisible</button>
+  </div>
+</ng-container>
+
+
+

@@ -1,0 +1,18 @@
+<form [formGroup]="miFormularioAnidado">
+  <h2>Datos en vivo de mi formulario anidado</h2>
+
+  <p>{{miFormularioAnidado.value | json}}</p>
+
+  <div formGroupName="fijo">
+    <mat-label>Fijo</mat-label>
+    <input matInput placeholder="Prefijo" type="text" formControlName="prefijo">
+    <input matInput placeholder="Numbero" type="text" formControlName="numero">
+  </div>
+
+  <div formGroupName="movil">
+    <mat-label>Movil</mat-label>
+
+    <input matInput placeholder="Prefijo" type="text" formControlName="prefijo">
+    <input matInput placeholder="Numbero" type="text" formControlName="numero">
+  </div>
+</form>

@@ -1,0 +1,21 @@
+<h4>Contactos:</h4>
+
+<div *ngIf="loadingContacts; else content">
+  <mat-spinner></mat-spinner>
+  <h6>Cargando tus contactos</h6>
+</div>
+
+<ng-template #content>
+
+  <app-contact-list [contacts]="randomContactsList" [previousFilter]="filterSexo!"></app-contact-list>
+
+  <ng-container *ngIf="(filterSexo == 'female' || filterSexo == 'male'); else listaCompleta">
+    <p>Mostrando lista de {{filterSexo}}</p>
+  </ng-container>
+  <ng-template #listaCompleta>
+    <p>Mostrando lista completa</p>
+  </ng-template>
+
+  <a routerLink="/dashboard">Volver a home</a>
+</ng-template>
+

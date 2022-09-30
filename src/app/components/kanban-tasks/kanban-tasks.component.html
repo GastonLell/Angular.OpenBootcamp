@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Pendientes</h2>
+
+
+
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todoTask" [cdkDropListConnectedTo]="doneList" class="list"
+    (cdkDropListDropped)="drop($event)">
+    <ng-container *ngIf="todoTask.length === 0">
+      <div class="list-item">
+        <h2>No tienes tareas pendientes!</h2>
+      </div>
+    </ng-container>
+    <div class="list-item" *ngFor="let task of todoTask" cdkDrag>
+      <div [ngClass]="
+          {
+            'info-task': task.level === 0,
+            'urgent-task': task.level === 1,
+            'blocking-task': task.level === 2
+          }">
+        <h2>
+          {{task.title}}
+        </h2>
+        <h3>
+          {{task.description}}
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Completadas</h2>
+  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="doneTask" [cdkDropListConnectedTo]="todoList" class="list"
+  (cdkDropListDropped)="drop($event)">
+
+    <ng-container *ngIf="doneTask.length === 0">
+      <div class="list-item">
+        <h4>No tienes tareas completas!</h4>
+      </div>
+    </ng-container>
+  <div [ngClass]="{'completed-task': task.completed === true}" class="list-item" *ngFor="let task of doneTask" cdkDrag>
+      <div  [ngClass]="
+              {
+                'info-task': task.level === 0,
+                'urgent-task': task.level === 1,
+                'blocking-task': task.level === 2
+              }">
+
+        <h2>
+          {{task.title}}
+        </h2>
+        <h3>
+          {{task.description}}
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

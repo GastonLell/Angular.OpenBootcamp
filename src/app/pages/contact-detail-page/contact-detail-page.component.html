@@ -1,0 +1,12 @@
+<ng-container *ngIf="contact !== undefined; else noContact">
+  <div>
+    <p>Contacto {{contact.id.name}}</p>
+    <p>{{contact | nombreCompleto}}</p>
+    <p>{{contact.email}}</p>
+  </div>
+</ng-container>
+
+<ng-template #noContact>
+ Error en el contacto
+</ng-template>
+<a [routerLink]="['/dashboard/contacts']" [queryParams]="{sexo: filter}">Volver</a>

@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Justin",
+        "last": "Ennis"
+      },
+      "location": {
+        "street": {
+          "number": 7599,
+          "name": "Lake of Bays Road"
+        },
+        "city": "Dorchester",
+        "state": "Northwest Territories",
+        "country": "Canada",
+        "postcode": "O3T 0S4",
+        "coordinates": {
+          "latitude": "-70.1414",
+          "longitude": "-121.9031"
+        },
+        "timezone": {
+          "offset": "+6:00",
+          "description": "Almaty, Dhaka, Colombo"
+        }
+      },
+      "email": "justin.ennis@example.com",
+      "login": {
+        "uuid": "84cc9474-dae3-4261-8027-8a13ef453d27",
+        "username": "bluekoala589",
+        "password": "6669",
+        "salt": "2Q5mhBgp",
+        "md5": "a774328d2587b55f150ad5f52b8b8b13",
+        "sha1": "eac127be71b134f0d5e5cf6270887e1d7f2182eb",
+        "sha256": "e7cd4556c72cc10571a078335bb24e2574078cbba00232be6ea0304854dc33e2"
+      },
+      "dob": {
+        "date": "1981-03-07T23:00:12.778Z",
+        "age": 41
+      },
+      "registered": {
+        "date": "2004-08-13T21:22:38.404Z",
+        "age": 18
+      },
+      "phone": "Y92 J28-1457",
+      "cell": "M36 Q22-7557",
+      "id": {
+        "name": "SIN",
+        "value": "415151695"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/21.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/21.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/21.jpg"
+      },
+      "nat": "CA"
+    }
+  ],
+  "info": {
+    "seed": "69e7dc621fa4f3fa",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

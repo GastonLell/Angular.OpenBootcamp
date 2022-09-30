@@ -1,0 +1,61 @@
+<!-- DIRECTIVAS DE ATRIBUTO -->
+<p [ngStyle]="{color: 'tomato', fontWeight: 'bold'}">Lista de elementos</p>
+
+<p ngClass="underline">Aqui vamos tener nuestra lista de elementos</p>
+
+<p [ngClass]="['underline', 'small']">Aun no tienes elementos en la lista</p>
+
+<p [ngClass]="{'underline': false, 'small': true}">Te recomendamos crear un elemento</p>
+
+
+<!-- DIRECTIVAS ESTRUCTURALES -->
+
+
+<ng-container *ngIf="!cargando; else templateEsperar">
+  <p>Todo listo!</p>
+</ng-container>
+
+<ng-template #templateEsperar>
+  <p>Cargando...</p>
+  <p>Espere a que termine el proceso</p>
+</ng-template>
+
+<button (click)="cambiarCargando()">{{cargando ? 'Terminar carga' : 'Iniciar carga'}}</button>
+
+
+<!-- DIRECTIVA NGFOR -->
+
+<div *ngFor="let element of listaElementos; let i = index; let even = even">
+  <div [ngStyle]="{background: even ? 'blue' : 'green', color: 'white', width: '200px', padding: '8px', margin: '8px'}">
+    <p>ID: {{i+1}}</p>
+    <p>{{element.nombre}}</p>
+    <p>${{element.precio}}</p>
+    <p>{{element.descripcion}}</p>
+  </div>
+</div>
+
+<!-- directiva ngSwitch -->
+<div [ngSwitch]="opcion">
+  <ng-template [id]="1" *ngSwitchCase="1">
+    <p>Has escogido la Opcion 1</p>
+  </ng-template>
+  <ng-template [id]="2" *ngSwitchCase="2">
+    <p >Has escogido la Opcion 2</p>
+  </ng-template>
+  <ng-template [id]="3" *ngSwitchCase="3">
+    <p >Has escogido la Opcion 3</p>
+  </ng-template>
+  <ng-template [id]="4" *ngSwitchCase="4">
+    <p>Has escogido la Opcion 4</p>
+  </ng-template>
+  <ng-template *ngSwitchDefault class="cerrar"></ng-template>
+</div>
+
+<div>
+  <input type="radio" name="opcion" (click)="escogerOpcion(1)"> Opcion 1
+  <input type="radio" name="opcion" (click)="escogerOpcion(2)"> Opcion 2
+  <input type="radio" name="opcion" (click)="escogerOpcion(3)"> Opcion 3
+  <input type="radio" name="opcion" (click)="escogerOpcion(4)"> Opcion 4
+  <input type="radio" name="opcion" selected="selected" (click)="escogerOpcion(0)"> Ocultar
+
+</div>
