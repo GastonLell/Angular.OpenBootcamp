@@ -1,6 +1,21 @@
-<h5>Title: {{task?.title}}</h5>
-<h6>Description: {{task?.description}}</h6>
+<div>
+  <div [ngClass]="
+     {
+      'info-task': task?.level === 0,
+      'urgent-task': task?.level === 1,
+      'blocking-task': task?.level === 2
+     }">
+    <div [ngSwitch]="task?.level">
+      <mat-icon *ngSwitchCase="0">info</mat-icon>
+      <mat-icon *ngSwitchCase="1">report_problem</mat-icon>
+      <mat-icon *ngSwitchCase="2">dangerous</mat-icon>
+      <mat-icon *ngSwitchDefault>info</mat-icon>
+    </div>
+  </div>
+  <h5>Title: {{task?.title}}</h5>
+  <h6>Description: {{task?.description}}</h6>
 
-<p>¿Completed?: {{task?.completed ? 'Yes' : 'No'}}</p>
+  <p>¿Completed?: {{task?.completed ? 'Yes' : 'No'}}</p>
 
-<button (click)="deleteTask()">X</button>
+  <button (click)="deleteTask()">X</button>
+</div>

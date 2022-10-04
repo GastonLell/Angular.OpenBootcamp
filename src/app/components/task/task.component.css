@@ -1,0 +1,16 @@
+
+.info-task{
+  color: rgb(134, 149, 230);
+}
+
+.urgent-task{
+  color: rgb(180, 126, 25);
+}
+
+.blocking-task{
+  color: rgb(221, 78, 53);
+}
+
+.completed-task{
+  background-color: aliceblue;
+}

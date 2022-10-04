@@ -59,6 +59,11 @@ import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 import { KanbanTasksComponent } from './components/kanban-tasks/kanban-tasks.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
+// directives
+import { LifeCycleDirective } from './directives/life-cycle.directive';
+import { MouseOverDirective } from './directives/mouse-over.directive';
+import { OnDemandPreloadStrategy } from './routes/preloading-strategies/on-demand-preloading-strategy';
+
 
 @NgModule({
   declarations: [
@@ -99,6 +104,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DashboardComponent,
     TasksPageComponent,
     KanbanTasksComponent,
+
+    // directives
+    LifeCycleDirective,
+     MouseOverDirective,
   ],
   imports: [
     BrowserModule,
@@ -125,7 +134,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     // registrar locales de ES para que los pipes salgan en español
     {
       provide: LOCALE_ID, useValue: 'es'
-    }
+    },
+    OnDemandPreloadStrategy
   ],
   bootstrap: [AppComponent]
 })

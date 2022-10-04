@@ -12,6 +12,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
+import { OnDemandPreloadStrategy } from './routes/preloading-strategies/on-demand-preloading-strategy';
 
 const routes: Routes = [
   {
@@ -49,6 +50,14 @@ const routes: Routes = [
         component: RandomContactPageComponent,
         canActivate: [AuthGuard],
       },
+      {
+        path: 'fire-store',
+        loadChildren: () => import('./modules/pages/fire-store/fire-store.module').then(m => m.FireStoreModule),
+        canActivate: [AuthGuard],
+        data: {
+          preload: true
+        }
+      },
 
     ]
   },
@@ -68,7 +77,11 @@ const routes: Routes = [
   },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {
+      preloadingStrategy: OnDemandPreloadStrategy
+    }
+  )],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
